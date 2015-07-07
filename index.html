@@ -44,21 +44,27 @@
     #<span style="color:#A52A2A">include</span> <span style="color:#00008B"> "vulpes.hpp" <br></span>
     <br>
     <span style="color:#A52A2A">int</span> main(){ <br>
-    <span style="color:#A9A9A9">// Allocating Host memory</span><br>
+    
+    &nbsp&nbsp<span style="color:#A9A9A9">// Allocating Host memory</span><br>
     &nbsp&nbsp <span style="color:#A52A2A">float</span> a[] = {<span style="color:#1E90FF	">1</span>, <span style="color:#1E90FF	">2</span>, <span style="color:#1E90FF	">3</span>, <span style="color:#1E90FF	">4</span>, <span style="color:#1E90FF">5</span>, <span style="color:#1E90FF">6</span>}; <br>
     &nbsp&nbsp <span style="color:#A52A2A">float</span> b[] = {<span style="color:#1E90FF	">2</span>, <span style="color:#1E90FF	">3</span>, <span style="color:#1E90FF	">4</span>, <span style="color:#1E90FF	">5</span>, <span style="color:#1E90FF">6</span>, <span style="color:#1E90FF">7</span>}; <br>
-    
+    <br>
+    &nbsp&nbsp<span style="color:#A9A9A9">// Allocating aligned memory for output vector</span><br>
     &nbsp&nbsp std::vector&lt<span style="color:#A52A2A">float</span>, aligned_allocator&lt<span style="color:#A52A2A">float</span>&gt&gtc(<span style="color:#1E90FF">6</span>); <br>
     <br>
+    
+    &nbsp&nbsp<span style="color:#A9A9A9">// Allocating GPU memory</span><br>
     &nbsp&nbsp vulpes::vector&lt<span style="color:#A52A2A">float</span>&gt ad(a, a+<span style="color:#1E90FF	">6</span>); <br>
     &nbsp&nbsp vulpes::vector&lt<span style="color:#A52A2A">float</span>&gt bd(b, b+<span style="color:#1E90FF	">6</span>); <br>
     &nbsp&nbsp vulpes::vector&lt<span style="color:#A52A2A">float</span>&gt cd(c); <br>
     <br>
+    &nbsp&nbsp<span style="color:#A9A9A9">// Executing operation addition on GPU using vulpes::transform </span><br>
     &nbsp&nbsp <span style="color:#1E90FF	">vulpes::transform</span>(ad.<span style="color:#1E90FF">begin()</span>, ad.<span style="color:#1E90FF">end()</span>, <br> 
     &nbsp&nbsp&nbsp&nbsp bd.<span style="color:#1E90FF">begin()</span>, <br>
     &nbsp&nbsp&nbsp&nbsp cd.<span style="color:#1E90FF">begin()</span>, <br> 
     &nbsp&nbsp&nbsp&nbsp <span style="color:#1E90FF">vulpes::plus</span>&lt<span style="color:#A52A2A">float</span>&gt()); <br>
     <br>
+    &nbsp&nbsp<span style="color:#A9A9A9">// Printing out the result</span><br>
     &nbsp&nbsp std::cout&lt&lt c[<span style="color:#1E90FF	">3</span>] &lt&ltstd::endl; <br>
     &nbsp&nbsp return <span style="color:#1E90FF	">0</span>; <br>
     }
