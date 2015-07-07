@@ -40,14 +40,14 @@
 <p>
   <code>
     #<span style="color:#A52A2A">include</span> <span style="color:#00008B"> &ltiostream&gt <br></span>
-    #include &ltvector&gt <br>
-    #include "vulpes.hpp" <br>
+    #<span style="color:#A52A2A">include</span> <span style="color:#00008B"> &ltvector&gt <br></span>
+    #<span style="color:#A52A2A">include</span> <span style="color:#00008B"> "vulpes.hpp" <br></span>
     <br>
     int main(){ <br>
-    &nbsp&nbsp float a[] = {1, 2, 3, 4, 5, 6}; <br>
-    &nbsp&nbsp float b[] = {2, 3, 4, 5, 6, 7}; <br>
+    &nbsp&nbsp <span style="color:#A52A2A">float</span> a[] = {1, 2, 3, 4, 5, 6}; <br>
+    &nbsp&nbsp <span style="color:#A52A2A">float</span> b[] = {2, 3, 4, 5, 6, 7}; <br>
     
-    &nbsp&nbsp std::vector&ltfloat, aligned_allocator&ltfloat&gt&gtc(6); <br>
+    &nbsp&nbsp std::vector&lt<span style="color:#A52A2A">float</span>, aligned_allocator&lt<span style="color:#A52A2A">float</span>&gt&gtc(6); <br>
     
     &nbsp&nbsp vulpes::vector&ltfloat&gt ad(a, a+6); <br>
     &nbsp&nbsp vulpes::vector&ltfloat&gt bd(b, b+6); <br>
