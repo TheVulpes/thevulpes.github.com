@@ -44,7 +44,19 @@
     #include "vulpes.hpp" <br>
     <br>
     int main(){ <br>
-    &nbsp&nbsp float a[] = {1, 2, 3, 4, 5, 6};
+    &nbsp&nbsp float a[] = {1, 2, 3, 4, 5, 6}; <br>
+    &nbsp&nbsp float b[] = {2, 3, 4, 5, 6, 7}; <br>
+    
+    &nbsp&nbsp std::vector&ltfloat, aligned_allocator&ltfloat&gt&gtc(6); <br>
+    
+    &nbsp&nbsp vulpes::vector&ltfloat&gt ad(a, a+6); <br>
+    &nbsp&nbsp vulpes::vector&ltfloat&gt bd(b, b+6); <br>
+    &nbsp&nbsp vulpes::vector&ltfloat&gt cd(c); <br>
+    
+    &nbsp&nbsp vulpes::transform(ad.begin(), ad.end(), bd.begin(), cd.begin(), vulpes::plus&ltfloat&gt()); <br>
+    
+    &nbsp&nbsp std::cout&lt&lt c[3] &lt&ltstd::endl; <br>
+    &nbsp&nbsp return 0; <br>
     }
   </code>
 </p>
