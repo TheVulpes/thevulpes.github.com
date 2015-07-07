@@ -48,13 +48,16 @@
     &nbsp&nbsp <span style="color:#A52A2A">float</span> b[] = {<span style="color:#1E90FF	">2</span>, <span style="color:#1E90FF	">3</span>, <span style="color:#1E90FF	">4</span>, <span style="color:#1E90FF	">5</span>, <span style="color:#1E90FF">6</span>, <span style="color:#1E90FF">7</span>}; <br>
     
     &nbsp&nbsp std::vector&lt<span style="color:#A52A2A">float</span>, aligned_allocator&lt<span style="color:#A52A2A">float</span>&gt&gtc(<span style="color:#1E90FF">6</span>); <br>
-    
-    &nbsp&nbsp vulpes::vector&ltfloat&gt ad(a, a+<span style="color:#1E90FF	">6</span>); <br>
-    &nbsp&nbsp vulpes::vector&ltfloat&gt bd(b, b+<span style="color:#1E90FF	">6</span>); <br>
-    &nbsp&nbsp vulpes::vector&ltfloat&gt cd(c); <br>
-    
-    &nbsp&nbsp <span style="color:#1E90FF	">vulpes::transform</span>(ad.begin(), ad.end(), <br> bd.begin(), <br> cd.begin(), <br> <span style="color:#1E90FF">vulpes::plus</span>&lt<span style="color:#A52A2A">float</span>&gt()); <br>
-    
+    <br>
+    &nbsp&nbsp vulpes::vector&lt&lt<span style="color:#A52A2A">float</span>&gt ad(a, a+<span style="color:#1E90FF	">6</span>); <br>
+    &nbsp&nbsp vulpes::vector&lt&lt<span style="color:#A52A2A">float</span>&gt bd(b, b+<span style="color:#1E90FF	">6</span>); <br>
+    &nbsp&nbsp vulpes::vector&lt&lt<span style="color:#A52A2A">float</span>&gt cd(c); <br>
+    <br>
+    &nbsp&nbsp <span style="color:#1E90FF	">vulpes::transform</span>(ad.begin(), ad.end(), <br> 
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp bd.begin(), <br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp cd.begin(), <br> 
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <span style="color:#1E90FF">vulpes::plus</span>&lt<span style="color:#A52A2A">float</span>&gt()); <br>
+    <br>
     &nbsp&nbsp std::cout&lt&lt c[<span style="color:#1E90FF	">3</span>] &lt&ltstd::endl; <br>
     &nbsp&nbsp return <span style="color:#1E90FF	">0</span>; <br>
     }
